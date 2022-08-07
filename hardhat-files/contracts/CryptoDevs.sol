@@ -6,7 +6,7 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/token/ERC721/extensions/ERC721Enumerable.sol";
 
 contract CryptoDevs is ERC721Enumerable, Ownable {
-    string baseTokeURI;
+    string baseTokenURI;
 
     IWhitelist whitelist;
 
@@ -22,7 +22,7 @@ contract CryptoDevs is ERC721Enumerable, Ownable {
     constructor(string memory baseURI_, address whitelistContractAddress)
         ERC721("Crypto Devs", "CDV")
     {
-        baseTokeURI = baseURI_;
+        baseTokenURI = baseURI_;
         whitelist = IWhitelist(whitelistContractAddress); //wrap the whitelistContract address in an interface to create an instance of the whitelist contract.
     }
 
@@ -65,7 +65,7 @@ contract CryptoDevs is ERC721Enumerable, Ownable {
     }
 
     function _baseURI() internal view override returns (string memory) {
-        return baseTokeURI;
+        return baseTokenURI;
     }
 
     function getBalance() public view returns (uint) {
