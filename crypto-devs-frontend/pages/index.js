@@ -27,9 +27,9 @@ export default function Home() {
       // if the user is not connected to rinkeby, tell them to connect to rinkeby
 
       const { chainId } = await web3provider.getNetwork();
-      if (chainId !== 4) {
-        alert("Please connect to the rinkeby network");
-        throw new Error("Please connect to the rinkeby network");
+      if (chainId !== 5) {
+        alert("Please connect to the goerli network");
+        throw new Error("Please connect to the goerli network");
       }
 
       if (needsigner) {
@@ -233,7 +233,7 @@ export default function Home() {
   useEffect(() => {
     if (!walletConnected) {
       web3ModalRef.current = new Web3Modal({
-        network: "rinkeby",
+        network: "goerli",
         providerOptions: {},
         disableInjectedProvider: false,
       });

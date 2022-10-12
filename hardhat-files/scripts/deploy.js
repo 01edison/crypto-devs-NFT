@@ -16,3 +16,6 @@ main().catch((error) => {
   console.error(error);
   process.exitCode = 1;
 });
+
+
+// nft address on goerli : 0x0e6ADe905205E9a4a18f28cFE1146aA75C10C928
